@@ -1,0 +1,61 @@
+{
+  "name": "@rbxts/quirk-ui",
+  "version": "1.0.0",
+  "description": "A modern, component-based UI library for Roblox-TS with reusable components and utilities",
+  "main": "out/index.lua",
+  "scripts": {
+    "build": "rbxtsc",
+    "watch": "rbxtsc -w",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Whimco-Studio/Quirk.git"
+  },
+  "keywords": [
+    "roblox",
+    "roblox-ts",
+    "ui",
+    "components",
+    "gui",
+    "typescript",
+    "rbxts"
+  ],
+  "author": "Whimco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Whimco-Studio/Quirk/issues"
+  },
+  "homepage": "https://github.com/Whimco-Studio/Quirk#readme",
+  "types": "out/index.d.ts",
+  "files": [
+    "out",
+    "src",
+    "README.md",
+    "LICENSE",
+    "!**/*.tsbuildinfo"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@rbxts/compiler-types": "^3.0.0-types.0",
+    "@rbxts/types": "^1.0.887",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-roblox-ts": "^1.2.1",
+    "prettier": "^3.6.2",
+    "roblox-ts": "^3.0.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@rbxts/charm": "^0.10.0",
+    "@rbxts/dumpster": "^1.0.8",
+    "@rbxts/jsnatives": "^1.1.5",
+    "@rbxts/make": "^1.0.6",
+    "@rbxts/ripple": "^0.9.3"
+  }
+}
