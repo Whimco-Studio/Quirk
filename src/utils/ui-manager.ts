@@ -1,20 +1,27 @@
 import { Object as JSObject } from "@rbxts/jsnatives";
-import GuiController from "./gui-controller";
+import type GuiController from "./gui-controller";
 import { StarterGui } from "@rbxts/services";
 
 class UiManager {
-	private _openGuis: Map<string, GuiController> = new Map();
 	private _registeredControllers: Map<string, GuiController> = new Map();
 	private _disabledCoreGuis: Enum.CoreGuiType[] = [];
+	private _initialized = false;
+	private _started = false;
 	// constructor() {}
 
 	private _init() {
+		if (this._initialized) return;
+		this._initialized = true;
+
 		for (const controller of JSObject.values(this._registeredControllers)) {
 			controller.Init();
 		}
 	}
 
 	private _start() {
+		if (this._started) return;
+		this._started = true;
+
 		for (const controller of JSObject.values(this._registeredControllers)) {
 			controller.Start();
 		}
@@ -43,6 +50,13 @@ class UiManager {
 
 	public RegisterController(controller: GuiController) {
 		this._registeredControllers.set(controller.namespace, controller);
+
+		if (this._initialized) {
+			controller.Init();
+			if (this._started) {
+				controller.Start();
+			}
+		}
 		return controller;
 	}
 
