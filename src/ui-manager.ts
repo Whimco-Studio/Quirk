@@ -61,6 +61,10 @@ class UiManager {
 	public Hide(namespace: string) {
 		this._registeredControllers.get(namespace)?.Hide();
 	}
+
+	public IsVisible(namespace: string) {
+		return this._registeredControllers.get(namespace)?._state.Visible() ?? false;
+	}
 }
 
 export default new UiManager();
