@@ -1,5 +1,5 @@
 import { Object as JSObject } from "@rbxts/jsnatives";
-import GuiController from "./utils/gui-controller";
+import GuiController from "./gui-controller";
 import { StarterGui } from "@rbxts/services";
 
 class UiManager {

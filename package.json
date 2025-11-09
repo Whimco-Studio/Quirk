@@ -1,6 +1,6 @@
 {
   "name": "@rbxts/quirk-ui",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A modern, component-based UI library for Roblox-TS with reusable components and utilities",
   "main": "out/index.lua",
   "scripts": {
